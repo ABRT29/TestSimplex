@@ -9,13 +9,13 @@ class Simplex(object):
 	def rechercheVariableEntrante(self):
 		variableEntrante = min(self.tableauSimplex[0])
 		colomnePivot = self.tableauSimplex[0].index(variableEntrante)
-		print ("colomnePivot :", colomnePivot)
+		print ("Tableau apres pivotement :", colomnePivot)
 		return colomnePivot
 
 	def ratioTest(self, colomnePivot):
 		listeRatio = [float(x[0])/x[1] if x[1] > 0 else self.puissance for x in zip(self.valeursRHS, self.tableauSimplex[colomnePivot])]
 		lignePivot = listeRatio.index(min(listeRatio))
-		print ("ligneRatio:", listeRatio)
+		print ("listeRatio:", listeRatio)
 		print ("lignePivot:", lignePivot)
 		return lignePivot
 
@@ -43,7 +43,7 @@ class Simplex(object):
 			return False
 
 	def conditionArret(self):
-		print ("Initialisation du tableau \n")
+		print ("Tableau initial \n")
 		for row in self.tableauSimplex:
 			print (row)
 		print
