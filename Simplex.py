@@ -4,7 +4,7 @@ class Simplex(object):
 		self.numberOfVariables = len(simplexTableau[0])
 		self.invertedSimplex = [[row[i] for row in simplexTableau] for i in range(self.numberOfVariables)]
 		self.rhsValues = self.invertedSimplex[-1]
-		self.bigM = 10**10 ### Should be changed if you're actually dealing with numbers like this
+		self.bigM = 10**10 
 
 	def findEnteringVariable(self):
 		enteringVariable = min(self.simplexTableau[0])
